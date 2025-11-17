@@ -156,7 +156,7 @@ UUID=$(cat /proc/sys/kernel/random/uuid)
 EMAIL=$(tr -dc 'a-z0-9' </dev/urandom | head -c 8)
 
 # === Выбор SNI и DEST с наименьшим пингом ===
-DOMAINS=("st.ozone.ru")
+DOMAINS=("ad.mail.ru")
 BEST_DOMAIN=""
 BEST_PING=9999
 
@@ -177,8 +177,8 @@ for domain in "${DOMAINS[@]}"; do
 done
 
 if [[ -z "$BEST_DOMAIN" ]]; then
-    echo -e "${red}Не удалось определить доступный домен. Используем st.ozone.ru по умолчанию.${plain}" >&3
-    BEST_DOMAIN="st.ozone.ru"
+    echo -e "${red}Не удалось определить доступный домен. Используем ad.mail.ru по умолчанию.${plain}" >&3
+    BEST_DOMAIN="ad.mail.ru"
 fi
 
 echo -e "${green}Выбран домен с наименьшим пингом: ${BEST_DOMAIN}${plain}" >&3
